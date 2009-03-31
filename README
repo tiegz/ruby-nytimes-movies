@@ -1,0 +1,7 @@
+ruby-nytimes-movies
+    by Tieg Zaharia
+    http://github.com/tiegz/ruby-nytimes-movies
+ 
+== DESCRIPTION:
+
+This is a Ruby library for the NYTimes Movie Reviews api.
