@@ -11,7 +11,7 @@ module NYTimes
 
         def request path, params
           params = params.to_param
-         params += ("&" + "api%2Dkey=#{URI.escape api_key}")
+         params += ("&" + "api-key=#{URI.escape api_key}")
 #          params = params.merge!(:'api-key' => api_key).to_param
           url = URI.escape "#{base_url}/#{path}.json?#{params}"
           response = nil
