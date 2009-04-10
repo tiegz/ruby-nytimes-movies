@@ -39,4 +39,8 @@ class TestCritic < Test::Unit::TestCase
     assert_equal 'A-O-Scott', a.seo_name
   end
 
+  def test_find_nil
+    assert_raise(NYTimes::Movies::Error) { NYTimes::Movies::Critic.find('Cheetara') }
+  end
+
 end

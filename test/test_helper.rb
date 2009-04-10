@@ -20,6 +20,7 @@ def enable_fake_web
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/full-time.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_full-time.json"))
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/part-time.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_part-time.json"))
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/a-o-scott.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_find_a-o-scott.json"))
+  FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/cheetara.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_find_cheetara.json"))
 
 end
 

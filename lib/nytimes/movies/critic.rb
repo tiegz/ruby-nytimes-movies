@@ -88,6 +88,7 @@ module NYTimes
         def parse_one(body) # :nodoc:
           json = ActiveSupport::JSON.decode(body)
           result = json['results'].first
+          raise Error, "That artist not found!" if result.nil? || json['status'] == 'ERROR'
           instantiate result
         end
         

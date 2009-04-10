@@ -74,7 +74,6 @@ module NYTimes
           params[:order]           = "by-#{options[:order].downcase.gsub(/_/,'-')}" if options[:order]
 
           response = request "reviews/all", params
-          puts "\nresponse is #{response.inspect}\n"
           raise Error, "No reviews found!" if response.nil? || response.empty?
           parse_many response
         end
@@ -100,7 +99,6 @@ module NYTimes
           params[:order]           = "by-#{options[:order].downcase.gsub(/_/,'-')}" if options[:order]
 
           response = request "reviews/picks", params
-          puts "\nresponse is #{response.inspect}\n"
           raise Error, "No reviews found!" if response.nil? || response.empty?
           parse_many response
         end
@@ -126,7 +124,6 @@ module NYTimes
           params[:order]           = "by-#{options[:order].downcase.gsub(/_/,'-')}" if options[:order]
 
           response = request "reviews/dvd-picks", params
-          puts "\nresponse is #{response.inspect}\n"
           raise Error, "No reviews found!" if response.nil? || response.empty?
           parse_many response
         end
@@ -147,7 +144,6 @@ module NYTimes
         end
         
         def instantiate(entry={})
-          puts "\n\nThe nentry is #{entry.inspect}\n"
           Review.new(:byline => entry["byline"], 
             :capsule_review => entry["capsule_review"], 
             :critics_pick => entry["critics_pick"], 
