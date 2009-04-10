@@ -11,9 +11,7 @@ module NYTimes
 
         def request path, params
           params = params.to_param
-         params += ("&" + "api-key=#{URI.escape api_key}")
-#          params = params.merge!(:'api-key' => api_key).to_param
-          url = URI.escape "#{base_url}/#{path}.json?#{params}"
+          url = URI.escape "#{base_url}/#{path}.json?#{params}#{'&' unless params.empty?}api-key=#{URI.escape api_key}"
           response = nil
           seconds = Benchmark.realtime { response = open url }
           puts "  \e[4;36;1mREQUEST (#{sprintf("%f", seconds)})\e[0m   \e[0;1m#{url}\e[0m"# if debug
