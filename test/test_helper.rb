@@ -14,7 +14,13 @@ def enable_fake_web
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/reviews/all.json?api-key=foobar', :string => File.read("#{dir}/fixtures/reviews_all.json"))
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=foobar', :string => File.read("#{dir}/fixtures/reviews_picks.json"))
   FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/reviews/dvd-picks.json?api-key=foobar', :string => File.read("#{dir}/fixtures/reviews_dvd-picks.json"))
-  
+
+  # Critic fixtures
+  FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/all.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_all.json"))
+  FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/full-time.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_full-time.json"))
+  FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/part-time.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_part-time.json"))
+  FakeWeb.register_uri('http://api.nytimes.com/svc/movies/v2/critics/a-o-scott.json?api-key=foobar', :string => File.read("#{dir}/fixtures/critics_find_a-o-scott.json"))
+
 end
 
 def disable_fake_web

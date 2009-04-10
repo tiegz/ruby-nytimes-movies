@@ -13,10 +13,10 @@ class TestBase < Test::Unit::TestCase
     assert_nil f.baz
   end
   
-  # def test_string_to_alias
-  #   assert_equal NYTimes::Movies::Base.send(:string_to_alias, "Dinosaur Jr."), 'dinosaur_jr'
-  #   assert_equal NYTimes::Movies::Base.send(:string_to_alias, " Something  with spaces  "), 'something_with_spaces'
-  #   assert_equal NYTimes::Movies::Base.send(:string_to_alias, "Soundtracks / Musicals"), 'soundtracks_musicals'
-  # end
+  def test_string_to_alias
+    assert_equal NYTimes::Movies::Base.send(:string_to_alias, "A. O. Scott"), 'a-o-scott'
+    assert_equal NYTimes::Movies::Base.send(:string_to_alias, " Something  with spaces  "), 'something-with-spaces'
+    assert_equal NYTimes::Movies::Base.send(:string_to_alias, "My / Favorite"), 'my-favorite'
+  end
   
 end

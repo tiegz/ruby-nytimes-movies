@@ -6,6 +6,8 @@ require 'benchmark'
 
 require 'lib/nytimes/movies/base'
 require 'lib/nytimes/movies/review'
+require 'lib/nytimes/movies/critic'
+require 'lib/nytimes/movies/image'
 
 module NYTimes
   module Movies

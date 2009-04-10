@@ -25,6 +25,11 @@ module NYTimes
           def settings
             @settings ||= YAML.load(File.open(File.dirname(__FILE__)+'/../../../config/settings.yml'))
           end
+
+          # converts something like Revyoo E. Err to revyoo-e-err
+          def string_to_alias(str)
+            str.strip.downcase.underscore.gsub(/(( )*[\/ ]( )*)/, "-").gsub(" ", "-").gsub(".", "")
+          end
       end
     
       # These are the default settings for the Base class. Change them, even per subclass if needed.

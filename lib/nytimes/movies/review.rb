@@ -133,7 +133,7 @@ module NYTimes
         
         
         protected
-        # Parses a response json string for artists.
+        # Parses a response json string for reviews.
         def parse_many(body) # :nodoc:
           json = ActiveSupport::JSON.decode(body)
           results = json['results']
@@ -142,12 +142,8 @@ module NYTimes
           }
         end
 
-        # Parses a response xml string for an artist.
+        # Parses a response xml string for a review.
         def parse_one(body) # :nodoc:
-          # entry = (Hpricot.XML(body)/:entry)
-          # title = (entry/'title').inner_html
-          # raise Error, "That artist not found!" if title.nil? || title.empty? || title == "No Artist Alias"
-          # instantiate entry
         end
         
         def instantiate(entry={})
